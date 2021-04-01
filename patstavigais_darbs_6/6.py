@@ -8,14 +8,3 @@ class MyRange:
     def __iter__(self):
         return self
 
-    def __next__(self):
-        can_next = (self.step > 0 and self.current < self.stop) \
-            or (self.step < 0 and self.current > self.stop)
-
-        if can_next:
-            result = self.current
-            self.current += self.step
-
-            return result
-        else:
-            raise StopIteration
